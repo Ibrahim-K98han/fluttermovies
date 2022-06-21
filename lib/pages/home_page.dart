@@ -8,6 +8,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Stack(
+          children: [
+            Image.asset('images/transparens.jpg', width: double.infinity, fit: BoxFit.cover,),
+            PageView.builder(itemBuilder: itemBuilder),
+          ],
+        ),
+      ),
+    );
   }
 }
