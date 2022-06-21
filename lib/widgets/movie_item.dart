@@ -15,6 +15,19 @@ class MovieItem extends StatefulWidget {
 class _MovieItemState extends State<MovieItem> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          pinned: true,
+          floating: true,
+          expandedHeight: 200,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text(widget.movie.name),
+            background: Image.asset(widget.movie.image, width: double.infinity, height: 200, fit: BoxFit.cover,),
+          ),
+        ),
+        //SliverList(),
+      ],
+    );
   }
 }
